@@ -3,6 +3,7 @@ import { Button, Form } from "react-bootstrap";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Login = () => {
   const emailRef = useRef("");
@@ -20,6 +21,14 @@ const Login = () => {
     const password = passwordRef.current.value;
     signInWithEmailAndPassword(email, password);
   };
+  let errorElement = "";
+  if (error) {
+    errorElement = (
+      <div>
+        <p className="text-danger">Error: {error.message}</p>
+      </div>
+    );
+  }
 
   if (user) {
     navigate(from, { replace: true });
@@ -37,9 +46,6 @@ const Login = () => {
             placeholder="Enter email"
             required
           />
-          <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
-          </Form.Text>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -54,10 +60,19 @@ const Login = () => {
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
           <Form.Check type="checkbox" label="Check me out" />
         </Form.Group>
-        <Button variant="primary" type="submit">
-          Submit
+        <Button variant="primary" type="submit" className="mb-4 px-3">
+          Login
         </Button>
+        {errorElement}
       </Form>
+
+      <p className="mt-3">
+        <span className="text-primary">
+          <Link to="/forgotPassword" style={{ textDecoration: "none" }}>
+            Forgot Password?
+          </Link>
+        </span>
+      </p>
       <p className="mt-3">
         New to Doctor ANY?{" "}
         <span className="text-primary">
@@ -66,6 +81,10 @@ const Login = () => {
           </Link>
         </span>
       </p>
+      <div>
+        <h4 className="text-center">or</h4>
+      </div>
+      <SocialLogin></SocialLogin>
     </div>
   );
 };
