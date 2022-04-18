@@ -1,8 +1,13 @@
 import React from "react";
 import { Card } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 const Service = ({ service }) => {
   const { img, name, price, description } = service;
+  const navigate = useNavigate();
+  const handleCheckout = () => {
+    navigate("/checkout");
+  };
   return (
     <Card className="mx-5 shadow rounded">
       <Card.Img variant="top" src={img} className="img-fluid" height={30} />
@@ -13,7 +18,9 @@ const Service = ({ service }) => {
         <Card.Text>{description}</Card.Text>
       </Card.Body>
       <Card.Footer className="bg-light text-center">
-        <button className="btn btn-primary px-5">ADD</button>
+        <button className="btn btn-primary px-5" onClick={handleCheckout}>
+          CHECKOUT
+        </button>
       </Card.Footer>
     </Card>
   );
