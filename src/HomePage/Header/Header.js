@@ -39,7 +39,12 @@ const Header = () => {
                   <Nav.Link as={Link} to="/login" className="text-white">
                     Login
                   </Nav.Link>
-                  <Nav.Link as={Link} to="/register" className="text-white">
+                  <Nav.Link
+                    eventKey={2}
+                    as={Link}
+                    to="/register"
+                    className="text-white"
+                  >
                     Register
                   </Nav.Link>
                 </>
