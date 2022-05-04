@@ -14,7 +14,7 @@
     "description": "A nephrectomy is surgery to remove a kidney. Your surgeon may perform a partial nephrectomy to remove only a portion of your kidney. Or you may have a radical nephrectomy, where your surgeon removes your entire kidney. If you have kidney disease or cancer, a nephrectomy can be a life-saving procedure."
   },
   {
-    "id": 2,
+    "id": 3,
     "name": "LIVER SURGERY",
     "price": 4000,
     "img": "./serviceImages/image3.png",
