@@ -18,7 +18,7 @@ const Header = () => {
       <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
         <Container>
           <Navbar.Brand as={Link} to="/home">
-            Doctor ANY
+            Doctor XYZ
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
@@ -29,12 +29,15 @@ const Header = () => {
               <Nav.Link as={Link} to="/blog" className="text-white">
                 Blog
               </Nav.Link>
+              <Nav.Link as={Link} to="/about" className="text-white">
+                About
+              </Nav.Link>
               {user ? (
                 <button
                   className="btn btn-link text-white text-decoration-none"
                   onClick={handleSignOut}
                 >
-                  sign out
+                  Sign out
                 </button>
               ) : (
                 <>

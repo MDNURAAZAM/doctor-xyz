@@ -12,6 +12,7 @@ import RequireAuth from "./Login/RequireAuth/RequireAuth";
 import ForgotPassword from "./Login/ForgotPassword/ForgotPassword";
 import Services from "./HomePage/Services/Services";
 import Blog from "./Blog/Blog";
+import About from "./About/About";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
         <Route path="/blog" element={<Blog></Blog>}></Route>
+        <Route path="/about" element={<About></About>}></Route>
         <Route path="/services" element={<Services></Services>}></Route>
         <Route
           path="/forgotPassword"
