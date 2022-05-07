@@ -17,40 +17,40 @@ const Header = () => {
     <div>
       <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
         <Container>
-          <Navbar.Brand as={Link} to="/home">
+          <Navbar.Brand as={Link} to="/home" className="fs-4">
             Doctor XYZ
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ms-auto">
-              <Nav.Link as={Link} to="/services" className="text-white">
-                Services
+              <Nav.Link as={Link} to="/services" className="text-white  fs-5">
+                SERVICES
               </Nav.Link>
-              <Nav.Link as={Link} to="/blog" className="text-white">
-                Blog
+              <Nav.Link as={Link} to="/blog" className="text-white fs-5">
+                BLOG
               </Nav.Link>
-              <Nav.Link as={Link} to="/about" className="text-white">
-                About
+              <Nav.Link as={Link} to="/about" className="text-white fs-5">
+                ABOUT
               </Nav.Link>
               {user ? (
                 <button
-                  className="btn btn-link text-white text-decoration-none"
+                  className="btn btn-link text-white text-decoration-none fs-5"
                   onClick={handleSignOut}
                 >
-                  Sign out
+                  SIGN OUT
                 </button>
               ) : (
                 <>
-                  <Nav.Link as={Link} to="/login" className="text-white">
-                    Login
+                  <Nav.Link as={Link} to="/login" className="text-white fs-5">
+                    LOGIN
                   </Nav.Link>
                   <Nav.Link
                     eventKey={2}
                     as={Link}
                     to="/register"
-                    className="text-white"
+                    className="text-white fs-5"
                   >
-                    Register
+                    REGISTER
                   </Nav.Link>
                 </>
               )}

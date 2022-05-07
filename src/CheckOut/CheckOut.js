@@ -5,7 +5,7 @@ import { ServicesContext } from "../App";
 const CheckOut = () => {
   const { productId } = useParams();
   const services = useContext(ServicesContext);
-  const selectedProduct = services.find((service) => productId == service.id);
+  const selectedProduct = services?.find((service) => productId == service.id);
   const { name, price, description } = selectedProduct;
   const navigate = useNavigate();
   const handleCheckout = () => {
